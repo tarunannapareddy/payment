@@ -1,0 +1,30 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/transaction"
+           xmlns="http://example.com/transaction"
+           elementFormDefault="qualified">
+
+    <xs:element name="transaction">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="transactionId" type="xs:string"/>
+                <xs:element name="price" type="xs:double"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="processTransactionRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="transaction"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="processTransactionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
